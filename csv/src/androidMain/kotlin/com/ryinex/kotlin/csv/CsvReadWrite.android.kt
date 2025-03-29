@@ -43,7 +43,7 @@ actual object CsvReadWrite {
     actual suspend fun open(): CsvFile? {
         context = currentCoroutineContext()
         readLauncher?.launch(arrayOf("text/csv", "text/comma-separated-values")) ?: bindError()
-        val result = flow.first() ?: bindError()
+        val result = flow.first() ?: throw CsvOperationError()
 
         val context = owner?.getContext() ?: bindError()
         val content = context.contentResolver.openInputStream(result).use { String(it!!.readBytes()) }
@@ -64,7 +64,7 @@ actual object CsvReadWrite {
     actual suspend fun save(name: String, content: String) {
         context = currentCoroutineContext()
         saveLauncher?.launch(name.ensureEndsWithCsv()) ?: bindError()
-        val result = flow.first() ?: bindError()
+        val result = flow.first() ?: throw CsvOperationError()
         save(result, content)
     }
 

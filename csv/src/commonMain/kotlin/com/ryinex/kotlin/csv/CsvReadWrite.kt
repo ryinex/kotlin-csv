@@ -65,7 +65,7 @@ internal fun <T> List<T>.ensureSize(size: Int, default: T): List<T> {
 }
 
 internal fun <T> List<List<T>>.ensureSize(default: T): List<List<T>> {
-    val largest = this.maxOf { it.size }
+    val largest = this.maxOfOrNull { it.size } ?: return this
     return this.map { it.ensureSize(size = largest, default = default) }
 }
 

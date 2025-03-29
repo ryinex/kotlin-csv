@@ -16,7 +16,7 @@ data class CsvFile(
 }
 
 private fun <T> List<List<T>>.rotate(default: T): List<List<T>> {
-    val largest = this.maxOf { it.size }
+    val largest = this.maxOfOrNull { it.size } ?: return this
     val original = this.map { it.ensureSize(size = largest, default = default) }
     val newList = arrayListOf<List<T>>()
 
