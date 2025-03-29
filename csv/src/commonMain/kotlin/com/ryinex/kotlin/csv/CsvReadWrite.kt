@@ -13,11 +13,19 @@ expect object CsvReadWrite {
 
 @Suppress("UnusedReceiverParameter", "RemoveRedundantQualifierName")
 suspend fun CsvReadWrite.save(name: String, list: List<List<Any?>>) {
-    val content = list.ensureSize(null).joinToString("\n") { row ->
-        row.joinToString(",") { cellItem -> cellItem.stringRepresent() }
-    }
+    val content = list.content()
     val file = CsvReadWrite.open(name, content) ?: return
     CsvReadWrite.save(file)
+}
+
+fun <T> CsvReadWrite.build(items: List<T>, isTitled: Boolean): CsvBuilder<T> {
+    return CsvBuilder<T>(items, isTitled)
+}
+
+internal fun List<List<Any?>>.content(): String {
+    return ensureSize(null).joinToString("\n") { row ->
+        row.joinToString(",") { cellItem -> cellItem.stringRepresent() }
+    }
 }
 
 internal fun csvLines(content: String): List<MutableMap<String, String>> {
