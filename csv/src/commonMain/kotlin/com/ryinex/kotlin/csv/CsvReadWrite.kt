@@ -18,7 +18,7 @@ suspend fun CsvReadWrite.save(name: String, list: List<List<Any?>>) {
     CsvReadWrite.save(file)
 }
 
-fun <T> CsvReadWrite.build(items: List<T>, isTitled: Boolean): CsvBuilder<T> {
+fun <T> CsvReadWrite.builder(items: List<T>, isTitled: Boolean): CsvBuilder<T> {
     return CsvBuilder<T>(items, isTitled)
 }
 
