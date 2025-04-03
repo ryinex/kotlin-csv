@@ -75,41 +75,22 @@ The binding ensures proper lifecycle management for CSV filesystem operations in
 
 ## Screenshots
 
-### Desktop
-<div style="display: flex; gap: 20px;">
-    <div>
-        <img src="images/desktop_open.png" width="400"/>
-        <p align="center">Opening CSV file using native file picker</p>
-    </div>
-    <div>
-        <img src="images/desktop_save.png" width="400"/>
-        <p align="center">Saving CSV file with system dialog</p>
-    </div>
-</div>
+|                    Open CSV                    |                    Save CSV                    |
+|:----------------------------------------------:|:----------------------------------------------:|
+| ![Open CSV Operation](images/desktop_open.png) | ![Save CSV Operation](images/desktop_save.png) |
+|           Select a CSV file to open            |        Choose location to save CSV file        |
 
 ### Browser
-<div style="display: flex; gap: 20px;">
-    <div>
-        <img src="images/browser_open.png" width="400"/>
-        <p align="center">File selection through browser dialog</p>
-    </div>
-    <div>
-        <img src="images/browser_save.png" width="400"/>
-        <p align="center">Download CSV in browser</p>
-    </div>
-</div>
+|                    Open CSV                     |                    Save CSV                     |
+|:-----------------------------------------------:|:-----------------------------------------------:|
+| ![Open CSV in Browser](images/browser_open.png) | ![Save CSV in Browser](images/browser_save.png) |
+|            Click to select CSV file             |          File downloads automatically           |
 
 ### Android
-<div style="display: flex; gap: 20px;">
-    <div>
-        <img src="images/android_open.jpg" width="300"/>
-        <p align="center">Android Storage Access Framework Read</p>
-    </div>
-    <div>
-        <img src="images/android_save.jpg" width="300"/>
-        <p align="center">Android Storage Access Framework Save</p>
-    </div>
-</div>
+|                    Open CSV                     |                    Save CSV                     |
+|:-----------------------------------------------:|:-----------------------------------------------:|
+| ![Open CSV on Android](images/android_open.jpg) | ![Save CSV on Android](images/android_save.jpg) |
+|      Android System Access Framework Open       |      Android System Access Framework Save       |
 
 ## TODO
 
