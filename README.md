@@ -66,7 +66,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 // In Fragment
 override fun onCreateView(/*.....*/): View {
     // ...
-    CsvReadWrite.bind(requireActivity())
+    CsvReadWrite.bind(this)
     return<VIEW>
 }
 ```
@@ -75,22 +75,20 @@ The binding ensures proper lifecycle management for CSV filesystem operations in
 
 ## Screenshots
 
-|                    Open CSV                    |                    Save CSV                    |
+### Desktop
+|       `java.awt.FileDialog` Open Dialog        |       `java.awt.FileDialog` Save Dialog        |
 |:----------------------------------------------:|:----------------------------------------------:|
 | ![Open CSV Operation](images/desktop_open.png) | ![Save CSV Operation](images/desktop_save.png) |
-|           Select a CSV file to open            |        Choose location to save CSV file        |
 
 ### Browser
-|                    Open CSV                     |                    Save CSV                     |
-|:-----------------------------------------------:|:-----------------------------------------------:|
-| ![Open CSV in Browser](images/browser_open.png) | ![Save CSV in Browser](images/browser_save.png) |
-|            Click to select CSV file             |          File downloads automatically           |
+|    Native `HTMLInputElement` to load files     | Native `<a>` tag to save and download the file |
+|:----------------------------------------------:|:----------------------------------------------:|
+| ![Open CSV Operation](images/browser_open.png) | ![Save CSV Operation](images/browser_save.png) |
 
 ### Android
-|                    Open CSV                     |                    Save CSV                     |
-|:-----------------------------------------------:|:-----------------------------------------------:|
-| ![Open CSV on Android](images/android_open.jpg) | ![Save CSV on Android](images/android_save.jpg) |
-|      Android System Access Framework Open       |      Android System Access Framework Save       |
+| Android System Access Framework `OpenDocument`  | Android System Access Framework `CreateDocument` |
+|:-----------------------------------------------:|:------------------------------------------------:|
+| ![Open CSV on Android](images/android_open.jpg) | ![Save CSV on Android](images/android_save.jpg)  |
 
 ## TODO
 
